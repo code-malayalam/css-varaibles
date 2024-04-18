@@ -1,0 +1,80 @@
+:root {
+    --base-gap: 16px;
+    --section-column: auto auto auto;
+
+    --color: white;
+    --color-accent: blue;
+    --color-text: #7e7e7e;
+    --color-text-secondary: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color: black;
+        --color-text: white;
+        --color-accent: #808080;
+        --color-text-secondary: black;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color: black;
+    --color-text: white;
+    --color-accent: #808080;
+    --color-text-secondary: black;
+}
+
+:root[data-theme="light"] {
+    --color: white;
+    --color-accent: blue;
+    --color-text: #7e7e7e;
+    --color-text-secondary: white;
+}
+
+body {
+    margin: 0;
+    color: var(--color-text);
+    background: var(--color);
+}
+
+header {
+    background: var(--color-accent);
+    color: var(--color-text-secondary);
+    padding: var(--base-gap);
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    padding: var(--base-gap);
+}
+
+
+.texts {
+    display: grid;
+    grid-template-columns: var(--section-column);
+    gap: var(--base-gap);
+    margin-bottom: var(--base-gap);
+}
+
+.texts .text {
+    border: 1px solid var(--color-accent);
+    padding: var(--base-gap);
+}
+
+.images {
+    display: grid;
+    grid-template-columns: var(--section-column);
+    gap: var(--base-gap);
+    margin-bottom: var(--base-gap);
+}
+
+.images img {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --section-column: auto;
+    }
+}
